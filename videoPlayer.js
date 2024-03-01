@@ -1,4 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const videoContainer = document.createElement("div");
+    videoContainer.id = "video-container";
+    videoContainer.style.position = "relative";
+    videoContainer.style.width = "100%";
+    videoContainer.style.padding = "178.21782178217822% 0 0";
+    document.body.appendChild(videoContainer);
+
+    const video = document.createElement("video");
+    video.id = "myVideo";
+    videoContainer.appendChild(video);
+
+    const playPauseBtn = document.createElement("button");
+    playPauseBtn.id = "playPauseBtn";
+    videoContainer.appendChild(playPauseBtn);
+
+    const playPauseBtnCenter = document.createElement("button");
+    playPauseBtnCenter.id = "playPauseBtnCenter";
+    videoContainer.appendChild(playPauseBtnCenter);
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("myVideo");
     const playPauseBtn = document.getElementById("playPauseBtn");
     const playPauseBtnCenter = document.getElementById("playPauseBtnCenter");
@@ -101,4 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function padZero(value) {
       return value < 10 ? `0${value}` : value;
     }
+
+    const playerScript = document.createElement("script");
+    playerScript.src = "https://raw.githubusercontent.com/JaumSantos5/player.js/main/videoPlayer.js";
+    playerScript.async = true;
+    document.head.appendChild(playerScript);
   });
+})
